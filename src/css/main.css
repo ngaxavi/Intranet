@@ -1,0 +1,8 @@
+body {
+    padding-top: 3.5rem;
+  }
+
+.navbar-right :first-child  {
+  position: relative;
+  right: 10px;
+}
