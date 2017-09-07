@@ -1,8 +1,18 @@
 body {
     padding-top: 3.5rem;
-  }
+}
+
+.tall {
+  padding-top: 1rem;
+}
 
 .navbar-right :first-child  {
   position: relative;
   right: 10px;
+}
+
+.my-card {
+  padding: 1.5%;
+  margin-top: 20px;
+  border: none;
 }
