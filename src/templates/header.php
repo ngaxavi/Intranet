@@ -30,11 +30,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/index.php" ? "active" : "");?>">
             <a class="nav-link" href="../../index.php">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Team</a>
+          <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/team.php" ? "active" : "");?>">
+            <a class="nav-link" href="../../team.php">Team</a>
           </li>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Abteilungen</a>
@@ -46,8 +46,8 @@
             <a class="dropdown-item" href="#">CT</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Infos</a>
+        <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/infos.php" ? "active" : "");?>">
+          <a class="nav-link" href="../../infos.php">Infos</a>
         </li>
         </ul>
         <?php if (!isset($_SESSION['username'])) { ?>

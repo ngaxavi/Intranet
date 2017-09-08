@@ -7,11 +7,11 @@
   <div class="container">
     <h1 class="display-3"> Praxis Biso Na Biso</h1>
     <p>
-      Das ist das Intranet der Praxis Biso Na Biso. Alle Geräte, die sich in verschiedenen Abtelungen befinden
+      Das ist das Intranet der Praxis Biso Na Biso. Alle Geräte, die sich in verschiedenen Abteilungen befinden
       werden hier registriert und aufgelistet.
     </p>
     <p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Mehr Infos &raquo;</a>
+      <a class="btn btn-primary btn-lg" href="infos.php" role="button">Mehr Infos &raquo;</a>
     </p>
   </div>
 </div>

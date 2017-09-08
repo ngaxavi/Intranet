@@ -17,6 +17,11 @@ body {
   border: none;
 }
 
+h3 {
+  font-weight: 700;
+  font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
 .navbar-login {
     width: 305px;
     padding: 10px;
