@@ -14,11 +14,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form role="form" action="" method="POST">
+                <form role="form" action="src/includes/login.inc.php" method="POST">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon fa fa-user"></span>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername" autofocus>
                         </div>
                     </div>
                     <div class="form-group">
