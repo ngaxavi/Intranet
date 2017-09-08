@@ -6,7 +6,7 @@ body {
   padding-top: 1rem;
 }
 
-.navbar-right :first-child  {
+.btn-space :first-child  {
   position: relative;
   right: 10px;
 }
@@ -15,4 +15,24 @@ body {
   padding: 1.5%;
   margin-top: 20px;
   border: none;
+}
+
+.navbar-login {
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session {
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size {
+    font-size: 87px;
+}
+
+.left-align {
+  left: -180px
 }

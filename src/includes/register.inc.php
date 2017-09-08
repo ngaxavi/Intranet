@@ -36,7 +36,6 @@ if (isset($_POST['submit'])) {
     $result    = $pdo->prepare($sql);
     $result->execute(array(':username' => $username));
     $nums_rows = $result->rowCount();
-    echo "username" .$nums_rows;
     
     if ($nums_rows > 0) {
         header("Location: ../../register.php?register=usernametaken");
@@ -48,7 +47,6 @@ if (isset($_POST['submit'])) {
     $result    = $pdo->prepare($sql);
     $result->execute(array(':email' => $email));
     $nums_rows = $result->rowCount();
-    echo "Email" . $nums_rows;
     
     if ($nums_rows > 0) {
         header("Location: ../../register.php?register=emailtaken");

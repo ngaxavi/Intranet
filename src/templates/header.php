@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,8 +15,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
     <link href="src/css/main.css" rel="stylesheet">
   </head>
@@ -28,7 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../index.php">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Team</a>
@@ -47,10 +50,53 @@
           <a class="nav-link" href="#">Infos</a>
         </li>
         </ul>
-        <div class="navbar navbar-right">
+        <?php if (!isset($_SESSION['username'])) { ?>
+        <ul class="navbar-nav ml-auto btn-space">
             <a href="login.php" class="btn btn-sm btn-outline-primary">Anmelden</a>
 
             <a href="register.php" class="btn btn-sm btn-outline-success">Registrieren</a>
-        </div>
+        </ul>
+        <?php } else { ?>
+          <ul class="navbar-nav ml-auto">
+            <li class="dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="fa fa-user"></span> 
+                  <strong><?php echo $_SESSION['username'] ?></strong>
+              </a>
+              <ul class="dropdown-menu left-align" aria-labelledby="user-menu">
+                  <li>
+                      <div class="navbar-login">
+                          <div class="row">
+                              <div class="col-lg-4">
+                                  <p class="text-center">
+                                      <span class="fa fa-user icon-size"></span>
+                                  </p>
+                              </div>
+                              <div class="col-lg-8">
+                                  <p class="text-left">
+                                    <strong><?php echo $_SESSION['firstName'] . " " .  $_SESSION['lastName']; ?></strong>
+                                  </p>
+                                  <p class="text-left small"><?php echo $_SESSION['email']; ?></p>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+                  <hr>
+                  <li>
+                      <div class="navbar-login navbar-login-session">
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <form action="src/includes/logout.inc.php" method="POST"> 
+                                      <button type="submit" class="btn btn-outline-danger btn-block" name="logout">Abmelden</button>
+                                 </form>
+                              </div>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+          
+        <?php } ?>
       </div>
     </nav>
