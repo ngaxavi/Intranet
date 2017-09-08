@@ -38,7 +38,7 @@
                     <?php } ?>
                     <?php if ($_GET['register'] == 'emailtaken') { ?>  
                     <div class="alert alert-danger">
-                      <strong>Diese Email wurde bereits benutzt!</strong>
+                      <strong>Die Email-Adresse ist bereits vergeben!</strong>
                     </div>
                     <?php } ?>
                     <?php if ($_GET['register'] == 'success') { ?> 

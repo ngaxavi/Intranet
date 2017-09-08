@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     $nums_rows = $query->rowCount();
 
     if($nums_rows < 1) {
-        header("Location: ../../login.php?login=error");
+        header("Location: ../../login.php?login=username");
         exit();
     }
 
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
         $hashedPasswordCheck = password_verify($password, $row['password']);
 
         if($hashedPasswordCheck == false) {
-            header("Location: ../../login.php?login=error");
+            header("Location: ../../login.php?login=password");
             exit();
 
         } else if($hashedPasswordCheck == true) {

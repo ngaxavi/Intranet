@@ -10,6 +10,27 @@
             <div class="col-md-8">
                 <h1 class="text-center">Anmeldung</h1>
                 <hr>
+                <?php if (isset($_GET['login'])) { ?> 
+
+                    <?php if ($_GET['login'] == 'empty') { ?>   
+                    <div class="alert alert-danger">
+                      <strong>Benutzername und Passwort müssen nicht leer sein!</strong>
+                    </div>
+                    <?php } ?>
+
+                    <?php if ($_GET['login'] == 'username') { ?>   
+                    <div class="alert alert-danger">
+                      <strong>Der Benutzername existiert nicht!</strong>
+                    </div>
+                    <?php } ?>
+
+                    <?php if ($_GET['login'] == 'password') { ?>    
+                    <div class="alert alert-danger">
+                      <strong>Das Passwort ist nicht gültig!</strong>
+                    </div>
+                    <?php } ?>
+
+                <?php } ?>
             </div>
         </div>
         <div class="row justify-content-center">
