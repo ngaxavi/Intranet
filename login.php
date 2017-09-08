@@ -1,5 +1,5 @@
 <?php
-    include_once ("src/templates/header.php");
+    include "src/templates/header.php";
 
 ?>
 
@@ -18,16 +18,16 @@
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon fa fa-user"></span>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername" autofocus>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername/Email" autofocus>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <span class="input-group-addon fa fa-key"></span>
+                            <span class="input-group-addon fa fa-lock"></span>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Passwort">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">Anmelden</button>
+                    <button type="submit" class="btn btn-success btn-block" name="submit">Anmelden</button>
                 </form>
             </div>
         </div>
