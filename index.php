@@ -19,8 +19,36 @@
 <div class="container">
 <div class="row">
   <div class="col-md-12">
-      <h1>Liste der Computer in verschiedene Abteilungen</h1>
+      <div class="form-inline">
+        <h1>Liste aller Computer in der Praxis</h1>
+        <a href="add.php" class="btn btn-sm btn-outline-success ml-auto">
+          <span class="fa fa-plus"></span>
+          <span>Gerät hinzufügen</span>
+          </a>
+      </div>
       <hr>
+      <!-- Add new computer: notification -->
+      <?php if (isset($_GET['add_status'])) { ?> 
+
+                    <?php if ($_GET['add_status'] == 'success') { ?>   
+                    <div class="alert alert-success" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong>Ein neues Gerät wurde erfolgreich registriert!</strong>
+                    </div>
+                    <?php } ?>
+
+                    <?php if ($_GET['add_status'] == 'fail') { ?>   
+                      <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Es gibt ein Problen mit dem Registrierung eines neuen Gerätes!</strong>
+                      </div>
+                      <?php } ?>
+        <?php } ?>
+
       <?php if (isset($_GET['update_status'])) { ?> 
 
                     <?php if ($_GET['update_status'] == 'success') { ?>   
