@@ -32,24 +32,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/index.php" ? "active" : "");?>">
+          <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/index.php" && !isset($_GET['department']) ? "active" : "");?>">
             <a class="nav-link" href="../../index.php">Home</a>
           </li>
           <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/team.php" ? "active" : "");?>">
             <a class="nav-link" href="../../team.php">Team</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown <?php echo isset($_GET['department']) ? "active" : "";?>">
           <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Abteilungen</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Anmeldung</a>
-            <a class="dropdown-item" href="#">Buchhaltung</a>
-            <a class="dropdown-item" href="#">MRT</a>
-            <a class="dropdown-item" href="#">Röntgen</a>
-            <a class="dropdown-item" href="#">CT</a>
+            <a class="dropdown-item <?php echo ($_GET['department'] == "Anmeldung" ? "active" : "");?>" href="../../index.php?department=Anmeldung">Anmeldung</a>
+            <a class="dropdown-item <?php echo ($_GET['department'] == "Buchhaltung" ? "active" : "");?>" href="../../index.php?department=Buchhaltung">Buchhaltung</a>
+            <a class="dropdown-item <?php echo ($_GET['department'] == "MRT" ? "active" : "");?>" href="../../index.php?department=MRT">MRT</a>
+            <a class="dropdown-item <?php echo ($_GET['department'] == "Röntgen" ? "active" : "");?>" href="../../index.php?department=Röntgen">Röntgen</a>
+            <a class="dropdown-item <?php echo ($_GET['department'] == "CT" ? "active" : "");?>" href="../../index.php?department=CT">CT</a>
           </div>
         </li>
         <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/infos.php" ? "active" : "");?>">
-          <a class="nav-link" href="../../infos.php">Infos</a>
+          <a class="nav-link" href="../../infos.php">Netwerkkarte</a>
         </li>
         </ul>
         <?php if (!isset($_SESSION['username'])) { ?>
