@@ -19,21 +19,27 @@
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="src/images/luc.png" alt="">
+        <div class="col-lg-3 col-sm-6 text-center mb-4">
+        <img class="rounded-circle img-fluid d-block mx-auto" src="src/images/luc.png" alt="">
           <h3>Luc</h3>
           <p class="text-muted">Software Entwickler PHP</p>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-3 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto" src="src/images/adamou.png" alt="">
           <h3>Adama</h3>
           <p class="text-muted">Web Developer und Designer</p>
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+        <div class="col-lg-3 col-sm-6 text-center mb-4">
           <img class="rounded-circle img-fluid d-block mx-auto" src="src/images/raphael.png" alt="">
           <h3>Raphael</h3>
           <p class="text-muted">Software Engineer</p>
         </div>
+        <div class="col-lg-3 col-sm-6 text-center mb-4">
+          <img class="rounded-circle img-fluid d-block mx-auto" src="src/images/junior.png" alt="">
+          <h3>Junior</h3>
+          <p class="text-muted">Software Entwickler</p>
+        </div>
+        
       </div>
 
     </div>

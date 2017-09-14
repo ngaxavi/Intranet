@@ -19,7 +19,7 @@
 <div class="row">
   <div class="col-md-12">
       <div class="form-inline">
-        <h1>Liste aller Computer in der <?php echo isset($_GET['department']) ? $_GET['department'] .'-Abteilung ' : 'der Praxis' ?></h1>
+        <h1>Liste aller Computer in der <?php echo isset($_GET['department']) ? $_GET['department'] .'-Abteilung ' : 'Praxis' ?></h1>
         <?php
           if(isset($_SESSION['username'])) { ?>
             <a href="add.php" class="btn btn-sm btn-outline-success ml-auto">
@@ -95,7 +95,6 @@
 
       <table class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
-                    <!-- <th class="text-center">ID</th> -->
                     <th class="text-center">Abteilung</th>
                     <th class="text-center">Hersteller</th>
                     <th class="text-center">IP-Adresse</th>
