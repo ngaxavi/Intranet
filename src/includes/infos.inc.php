@@ -1,8 +1,8 @@
 <?php
 
-include_once 'dbh.inc.php';
+  include_once 'dbh.inc.php';
 
-$sql = "SELECT * FROM drivers LIMIT 20";
+$sql = "SELECT * FROM drivers";
 $result = $pdo->prepare($sql);
 $result->execute();
 

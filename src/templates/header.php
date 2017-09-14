@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
     <!-- add Datatables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom styles for this template -->
@@ -41,11 +41,11 @@
           <li class="nav-item dropdown <?php echo isset($_GET['department']) ? "active" : "";?>">
           <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Abteilungen</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item <?php echo ($_GET['department'] == "Anmeldung" ? "active" : "");?>" href="../../index.php?department=Anmeldung">Anmeldung</a>
-            <a class="dropdown-item <?php echo ($_GET['department'] == "Buchhaltung" ? "active" : "");?>" href="../../index.php?department=Buchhaltung">Buchhaltung</a>
-            <a class="dropdown-item <?php echo ($_GET['department'] == "MRT" ? "active" : "");?>" href="../../index.php?department=MRT">MRT</a>
-            <a class="dropdown-item <?php echo ($_GET['department'] == "Röntgen" ? "active" : "");?>" href="../../index.php?department=Röntgen">Röntgen</a>
-            <a class="dropdown-item <?php echo ($_GET['department'] == "CT" ? "active" : "");?>" href="../../index.php?department=CT">CT</a>
+            <a class="dropdown-item <?php echo ( isset($_GET['department']) && $_GET['department'] == "Anmeldung" ? "active" : "");?>" href="../../index.php?department=Anmeldung">Anmeldung</a>
+            <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "Buchhaltung" ? "active" : "");?>" href="../../index.php?department=Buchhaltung">Buchhaltung</a>
+            <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "MRT" ? "active" : "");?>" href="../../index.php?department=MRT">MRT</a>
+            <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "Röntgen" ? "active" : "");?>" href="../../index.php?department=Röntgen">Röntgen</a>
+            <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "CT" ? "active" : "");?>" href="../../index.php?department=CT">CT</a>
           </div>
         </li>
         <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/infos.php" ? "active" : "");?>">
@@ -65,8 +65,8 @@
                   <span class="fa fa-user"></span> 
                   <strong><?php echo $_SESSION['username'] ?></strong>
               </a>
-              <ul class="dropdown-menu left-align" aria-labelledby="user-menu">
-                  <li>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="user-menu">
+                  <li class="dropdown-item">
                       <div class="navbar-login">
                           <div class="row">
                               <div class="col-lg-4">
@@ -84,7 +84,7 @@
                       </div>
                   </li>
                   <hr>
-                  <li>
+                  <li class="dropdown-item">
                       <div class="navbar-login navbar-login-session">
                           <div class="row">
                               <div class="col-lg-12">

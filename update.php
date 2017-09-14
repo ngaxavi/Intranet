@@ -11,7 +11,6 @@ if (isset($_GET[ 'update'])) {
 
     $tab = $statement->fetch(PDO::FETCH_ASSOC); 
 
-
  } 
 
 ?>
@@ -33,11 +32,11 @@ if (isset($_GET[ 'update'])) {
                             <label class="col-form-label col-sm-3" for="department">Abteilung</label>
                             <div class="col-sm-9">
                                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="department" id="department">
-                                    <option value="Anmeldung" <?php echo ($tab[ 'department'] === 'Anmeldung') ? 'selected' : ''; ?>>Anmeldung</option>
-                                    <option value="Buchhaltung" <?php echo ($tab[ 'department'] === 'Buchhaltung') ? 'selected' : ''; ?>>Buchhaltung</option>
-                                    <option value="MRT" <?php echo ($tab[ 'department'] === 'MRT') ? 'selected' : ''; ?>>MRT</option>
-                                    <option value="Röntgen" <?php echo ($tab[ 'department'] === 'Röntgen') ? 'selected' : ''; ?>>Röntgen</option>
-                                    <option value="CT" <?php echo ($tab[ 'department'] === 'CT') ? 'selected' : ''; ?>>CT</option>
+                                    <option value="Anmeldung" <?php echo ($tab['department'] === 'Anmeldung') ? 'selected' : ''; ?>>Anmeldung</option>
+                                    <option value="Buchhaltung" <?php echo ($tab['department'] === 'Buchhaltung') ? 'selected' : ''; ?>>Buchhaltung</option>
+                                    <option value="MRT" <?php echo ($tab['department'] === 'MRT') ? 'selected' : ''; ?>>MRT</option>
+                                    <option value="Röntgen" <?php echo (utf8_decode($tab['department']) === 'Röntgen') ? 'selected' : ''; ?>>Röntgen</option>
+                                    <option value="CT" <?php echo ($tab['department'] === 'CT') ? 'selected' : ''; ?>>CT</option>
                                 </select>
                             </div>
                         </div>
@@ -56,7 +55,7 @@ if (isset($_GET[ 'update'])) {
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="manufacturer">Hersteller</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Ex: Lenovo" name="manufacturer" value="<?php echo $tab['manufacturer'];?>">
+                                <input type="text" class="form-control" placeholder="Ex: Lenovo" name="manufacturer" value="<?php echo utf8_decode($tab['manufacturer']);?>">
                             </div>
                         </div>
                         <div class="form-group row">

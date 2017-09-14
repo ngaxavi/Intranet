@@ -1,29 +1,29 @@
-CREATE TABLE `computers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `department` varchar(256) NOT NULL,
-  `manufacturer` text NOT NULL,
-  `ip_0` int(11) NOT NULL,
-  `ip_1` int(11) NOT NULL,
-  `ip_2` int(11) NOT NULL,
-  `ip_3` int(11) NOT NULL,
-  `mac_0` varchar(256) NOT NULL,
-  `mac_1` varchar(256) NOT NULL,
-  `mac_2` varchar(256) NOT NULL,
-  `mac_3` varchar(256) NOT NULL,
-  `mac_4` varchar(256) NOT NULL,
-  `mac_5` varchar(256) NOT NULL,
-  `sub_0` int(11) NOT NULL,
-  `sub_1` int(11) NOT NULL,
-  `sub_2` int(11) NOT NULL,
-  `sub_3` int(11) NOT NULL,
-  `os` varchar(256) NOT NULL
+CREATE TABLE computers (
+  id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  department varchar(256) NOT NULL,
+  manufacturer text NOT NULL,
+  ip_0 int(11) NOT NULL,
+  ip_1 int(11) NOT NULL,
+  ip_2 int(11) NOT NULL,
+  ip_3 int(11) NOT NULL,
+  mac_0 varchar(256) NOT NULL,
+  mac_1 varchar(256) NOT NULL,
+  mac_2 varchar(256) NOT NULL,
+  mac_3 varchar(256) NOT NULL,
+  mac_4 varchar(256) NOT NULL,
+  mac_5 varchar(256) NOT NULL,
+  sub_0 int(11) NOT NULL,
+  sub_1 int(11) NOT NULL,
+  sub_2 int(11) NOT NULL,
+  sub_3 int(11) NOT NULL,
+  os varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `Computers`
+-- Déchargement des données de la table Computers
 --
 
-INSERT INTO `computers` (`id`, `department`, `manufacturer`, `ip_0`, `ip_1`, `ip_2`, `ip_3`, `mac_0`, `mac_1`, `mac_2`, `mac_3`, `mac_4`, `mac_5`, `sub_0`, `sub_1`, `sub_2`, `sub_3`, `os`) VALUES
+INSERT INTO computers (id, department, manufacturer, ip_0, ip_1, ip_2, ip_3, mac_0, mac_1, mac_2, mac_3, mac_4, mac_5, sub_0, sub_1, sub_2, sub_3, os) VALUES
 (1, 'Anmeldung', 'Lenovo', 192, 168, 0, 0, '11', '0', '0', '0', '0', '0', 255, 255, 255, 0, 'Archlinux'),
 (2, 'Anmeldung', 'Lenovo', 192, 168, 0, 0, '11', '0', '0', '0', '0', '0', 255, 255, 255, 0, 'Archlinux'),
 (6, 'Buchhaltung', 'Compaq', 192, 168, 0, 0, '2', '0', '0', '0', '0', '0', 255, 255, 255, 0, 'Ubuntu'),

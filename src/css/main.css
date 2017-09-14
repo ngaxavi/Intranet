@@ -2,6 +2,14 @@ body {
     padding-top: 3.5rem;
 }
 
+tbody tr { 
+  text-align: center!important; 
+}
+
+.dropdown-menu-right .dropdown-item:hover {
+  background-color: #fff;
+}
+
 .tall {
   padding-top: 1rem;
 }

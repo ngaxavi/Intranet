@@ -93,9 +93,9 @@
                       <?php } ?>
         <?php } ?>
 
-      <table class="table table-striped">
+      <table class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
-                    <th class="text-center">ID</th>
+                    <!-- <th class="text-center">ID</th> -->
                     <th class="text-center">Abteilung</th>
                     <th class="text-center">Hersteller</th>
                     <th class="text-center">IP-Adresse</th>
@@ -131,9 +131,8 @@
                           while ($row = $result->fetch(PDO::FETCH_ASSOC)) { 
                             ?>
                               <tr>
-                                <th scope="row" class="text-center"><?php echo $row['id']; ?></th>
-                                <td class="text-center"><?php echo $row['department']; ?></td>
-                                <td class="text-center"><?php echo $row['manufacturer']; ?></td>
+                                <td class="text-center"><?php echo utf8_decode($row['department']); ?></td>
+                                <td class="text-center"><?php echo utf8_decode($row['manufacturer']); ?></td>
                                 <td class="text-center"><?php echo $row['ip_0'] . "." . $row['ip_1'] . "." . $row['ip_2'] . "." . $row['ip_3']; ?></td>
                                 <td class="text-center"><?php echo $row['mac_0'] . ":" . $row['mac_1'] . ":" . $row['mac_2'] . ":" . $row['mac_3'] . ":" . $row['mac_4'] . ":" . $row['mac_5']; ?></td>
                                 <td class="text-center"><?php echo $row['sub_0'] . "." . $row['sub_1'] . "." . $row['sub_2'] . "." . $row['sub_3']; ?></td>
