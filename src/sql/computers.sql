@@ -1,3 +1,6 @@
+
+--- mysql
+
 CREATE TABLE computers (
   id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   department varchar(256) NOT NULL,
@@ -19,8 +22,33 @@ CREATE TABLE computers (
   os varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table Computers
+----------------------
+
+-- postgres
+
+CREATE SEQUENCE computers_seq;
+
+CREATE TABLE computers (
+  id int NOT NULL DEFAULT NEXTVAL ('computers_seq') PRIMARY KEY,
+  department varchar(256) NOT NULL,
+  manufacturer text NOT NULL,
+  ip_0 int NOT NULL,
+  ip_1 int NOT NULL,
+  ip_2 int NOT NULL,
+  ip_3 int NOT NULL,
+  mac_0 varchar(256) NOT NULL,
+  mac_1 varchar(256) NOT NULL,
+  mac_2 varchar(256) NOT NULL,
+  mac_3 varchar(256) NOT NULL,
+  mac_4 varchar(256) NOT NULL,
+  mac_5 varchar(256) NOT NULL,
+  sub_0 int NOT NULL,
+  sub_1 int NOT NULL,
+  sub_2 int NOT NULL,
+  sub_3 int NOT NULL,
+  os varchar(256) NOT NULL
+) ;
+
 --
 
 INSERT INTO computers (id, department, manufacturer, ip_0, ip_1, ip_2, ip_3, mac_0, mac_1, mac_2, mac_3, mac_4, mac_5, sub_0, sub_1, sub_2, sub_3, os) VALUES

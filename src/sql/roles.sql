@@ -1,0 +1,23 @@
+
+-- mysql
+CREATE TABLE roles (
+  id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--postgres
+CREATE SEQUENCE roles_seq;
+
+CREATE TABLE roles (
+  id INT CHECK (id > 0) NOT NULL DEFAULT NEXTVAL ('roles_seq'),
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+
+INSERT INTO roles(name) VALUES 
+('ADMIN'),
+('USER'),
+('SYSTEM');

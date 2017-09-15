@@ -35,11 +35,18 @@ if (isset($_POST['submit'])) {
             exit();
 
         } else if($hashedPasswordCheck == true) {
+            // retrieve the user role
+            $role = $pdo->prepare("SELECT r.name FROM user_role ur, roles r WHERE ur.role_id = r.id AND ur.user_id = :user_id");
+            $role->execute(array(':user_id' => $row['id']));
+            $role_name = $role->fetch(PDO::FETCH_ASSOC);
+        
+
             // log in the user here
             $_SESSION['username'] = $row['username'];
             $_SESSION['firstName'] = $row['first_name'];
             $_SESSION['lastName'] = $row['last_name'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['user_role'] = $role_name['name'];
             header("Location: ../../index.php");
             exit();
         }

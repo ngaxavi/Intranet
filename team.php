@@ -7,7 +7,7 @@
 <div class="card my-card">
 <div class="row">
         <div class="col-lg-12">
-          <h2 class="my-4 text-center">Das Team</h2>
+          <h2 class="my-4 text-center">Developer Team</h2>
           <hr>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">

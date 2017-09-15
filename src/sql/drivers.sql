@@ -1,3 +1,5 @@
+
+--mysql
 CREATE TABLE drivers (
 	id int(11) NOT NULL AUTO_INCREMENT,
 	company_id_hex varchar(256) NOT NULL,
@@ -5,6 +7,18 @@ CREATE TABLE drivers (
 	company_name varchar(256) NOT NULL,
 	PRIMARY KEY(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- postgres
+CREATE SEQUENCE drivers_seq;
+
+CREATE TABLE drivers (
+	id int NOT NULL DEFAULT NEXTVAL ('drivers_seq'),
+	company_id_hex varchar(256) NOT NULL,
+	company_id_base varchar(256) NOT NULL,
+	company_name varchar(256) NOT NULL,
+	PRIMARY KEY(id)
+) ;
 
 
 

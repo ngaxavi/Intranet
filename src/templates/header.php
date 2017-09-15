@@ -1,5 +1,6 @@
 <?php
   session_start();
+  include 'src/includes/utils.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,7 @@
           <li class="nav-item dropdown <?php echo isset($_GET['department']) ? "active" : "";?>">
           <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Abteilungen</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item <?php echo ( isset($_GET['department']) && $_GET['department'] == "Anmeldung" ? "active" : "");?>" href="../../index.php?department=Anmeldung">Anmeldung</a>
+            <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "Anmeldung" ? "active" : "");?>" href="../../index.php?department=Anmeldung">Anmeldung</a>
             <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "Buchhaltung" ? "active" : "");?>" href="../../index.php?department=Buchhaltung">Buchhaltung</a>
             <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "MRT" ? "active" : "");?>" href="../../index.php?department=MRT">MRT</a>
             <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "Röntgen" ? "active" : "");?>" href="../../index.php?department=Röntgen">Röntgen</a>
@@ -51,6 +52,11 @@
         <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/infos.php" ? "active" : "");?>">
           <a class="nav-link" href="../../infos.php">Netwerkkarte</a>
         </li>
+        <?php if(isset($_SESSION['user_role']) && hasSystemRole($_SESSION['user_role'])) { ?>
+        <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/users.php" ? "active" : "");?>">
+          <a class="nav-link" href="../../users.php">Benutzerrechte</a>
+        </li>
+        <?php } ?>
         </ul>
         <?php if (!isset($_SESSION['username'])) { ?>
         <ul class="navbar-nav ml-auto btn-space">

@@ -68,6 +68,24 @@ if (isset($_POST['submit'])) {
         ':email' => $email,
         ':password' => $hashedPassword
     ));
+
+
+    // add role USER to each new registred user
+    $user_statement = "SELECT id FROM users WHERE username = :username";
+
+    $user_id = $pdo->prepare($user_statement);
+    $user_id->execute(array(':username' => $username));
+    $user_row = $user_id->fetch(PDO::FETCH_ASSOC);
+
+    // get role id that corresponding to USER
+    $role_id = $pdo->prepare("SELECT id FROM roles WHERE name = 'USER'");
+    $role_id->execute();
+    $role_row = $role_id->fetch(PDO::FETCH_ASSOC);
+
+    // add this role to the new user
+    $statement = "INSERT INTO user_role(user_id, role_id) VALUES (:user_id, :role_id)";
+    $user_role = $pdo->prepare($statement);
+    $user_role->execute(array(':user_id' => $user_row['id'], ':role_id' => $role_row['id']));
     
     header("Location: ../../register.php?register=success");
     exit();
