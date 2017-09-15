@@ -62,15 +62,15 @@ if (isset($_GET[ 'update'])) {
                             <label class="col-form-label col-sm-3" for="mac">MAC-Adresse</label>
                             <div class="form-inline col-sm-9">
                                 <input class="form-control" type="text" name="mac_0" size="1" value="<?php echo $tab['mac_0'];?>">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" value="<?php echo $tab['mac_1'];?>" name="mac_1" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" value="<?php echo $tab['mac_2'];?>" name="mac_2" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" value="<?php echo $tab['mac_3'];?>" name="mac_3" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" value="<?php echo $tab['mac_4'];?>" name="mac_4" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" value="<?php echo $tab['mac_5'];?>" name="mac_5" size="1">
                             </div>
                         </div>

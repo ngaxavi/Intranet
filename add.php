@@ -50,15 +50,15 @@ include 'src/templates/header.php';
                             <label class="col-form-label col-sm-3" for="mac">MAC-Adresse</label>
                             <div class="form-inline col-sm-9">
                                 <input class="form-control" type="text" name="mac_0" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" name="mac_1" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" name="mac_2" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" name="mac_3" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" name="mac_4" size="1">
-                                <span style="font-weight: bold;">.</span>
+                                <span style="font-weight: bold;">:</span>
                                 <input class="form-control" type="text" name="mac_5" size="1">
                             </div>
                         </div>
