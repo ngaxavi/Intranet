@@ -1,7 +1,7 @@
 <?php 
 include 'src/templates/header.php'; 
 include_once 'src/includes/dbh.inc.php'; 
-if (isset($_GET[ 'update'])) { 
+if (isset($_GET['update'])) { 
     $id=$_GET[ 'update']; 
 
     $sql="SELECT * FROM computers WHERE id = :id" ; 
@@ -22,6 +22,14 @@ if (isset($_GET[ 'update'])) {
                 <div class="col-md-8">
                     <h1 class="text-center">Update des Gerätes</h1>
                     <hr>
+                    <?php if (isset($_GET['status'])) { ?> 
+
+                    <?php if ($_GET['status'] == 'empty') { ?>   
+                    <div class="alert alert-danger">
+                      <strong>Alle Felder sind erforderlich!</strong>
+                    </div>
+                    <?php } ?>
+                <?php } ?>
                 </div>
             </div>
             <div class="row justify-content-center">

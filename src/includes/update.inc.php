@@ -22,6 +22,16 @@ if (isset($_POST['submit'])) {
     $sub_3 = $_POST['sub_3'];
     $os = $_POST['os'];
 
+    
+    // check if no empty
+    foreach($_POST as $key => $value) { 
+        if (empty($value)) { 
+            header("Location: ../../update.php?status=empty");
+            exit();
+        }
+    }
+
+
     $statement = "UPDATE computers 
             SET department=:department, 
             manufacturer = :manufacturer, 

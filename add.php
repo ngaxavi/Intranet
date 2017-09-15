@@ -10,12 +10,19 @@ include 'src/templates/header.php';
                 <div class="col-md-8">
                     <h1 class="text-center">Registrierung neues Gerätes</h1>
                     <hr>
+                    <?php if (isset($_GET['status'])) { ?> 
+
+                    <?php if ($_GET['status'] == 'empty') { ?>   
+                    <div class="alert alert-danger">
+                      <strong>Alle Felder sind erforderlich!</strong>
+                    </div>
+                    <?php } ?>
+                <?php } ?>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <form role="form" action="src/includes/add.inc.php" method="POST">
-                        <input type="hidden" name="id">
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="department">Abteilung</label>
                             <div class="col-sm-9">
@@ -49,27 +56,27 @@ include 'src/templates/header.php';
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="mac">MAC-Adresse</label>
                             <div class="form-inline col-sm-9">
-                                <input class="form-control" type="text" name="mac_0" size="1">
+                                <input class="form-control" type="text" name="mac_0" size="1" maxlength="2">
                                 <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_1" size="1">
+                                <input class="form-control" type="text" name="mac_1" size="1" maxlength="2">
                                 <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_2" size="1">
+                                <input class="form-control" type="text" name="mac_2" size="1" maxlength="2">
                                 <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_3" size="1">
+                                <input class="form-control" type="text" name="mac_3" size="1" maxlength="2">
                                 <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_4" size="1">
+                                <input class="form-control" type="text" name="mac_4" size="1" maxlength="2">
                                 <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_5" size="1">
+                                <input class="form-control" type="text" name="mac_5" size="1" maxlength="2">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="subnet">Subnet Mask</label>
                             <div class="col-sm-9 form-inline">
-                                <input class="form-control" type="number" name="sub_0" min="100" size="1" max="255" value="<?php echo $tab['sub_0'];?>">
+                                <input class="form-control" type="number" name="sub_0" min="100" size="1" max="255" >
                                 <span style="font-weight: bold;">.</span>
-                                <input class="form-control" type="number" name="sub_1" min="100" size="1" max="255" value="<?php echo $tab['sub_1'];?>">
+                                <input class="form-control" type="number" name="sub_1" min="100" size="1" max="255" >
                                 <span style="font-weight: bold;">.</span>
-                                <input class="form-control" type="number" name="sub_2" min="100" size="1" max="255" value="<?php echo $tab['sub_2'];?>">
+                                <input class="form-control" type="number" name="sub_2" min="100" size="1" max="255">
                                 <span style="font-weight: bold;">.</span>
                                 <input class="form-control" type="number" placeholder="XXX" name="sub_3" min="0" size="1" max="254">
                             </div>
