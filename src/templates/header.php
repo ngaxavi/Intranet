@@ -39,6 +39,7 @@
           <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/team.php" ? "active" : "");?>">
             <a class="nav-link" href="../../team.php">Team</a>
           </li>
+          <?php if (isset($_SESSION['username'])) { ?>
           <li class="nav-item dropdown <?php echo isset($_GET['department']) ? "active" : "";?>">
           <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Abteilungen</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -49,6 +50,7 @@
             <a class="dropdown-item <?php echo (isset($_GET['department']) && $_GET['department'] == "CT" ? "active" : "");?>" href="../../index.php?department=CT">CT</a>
           </div>
         </li>
+        <?php } ?>
         <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/infos.php" ? "active" : "");?>">
           <a class="nav-link" href="../../infos.php">Netwerkkarte</a>
         </li>

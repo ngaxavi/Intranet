@@ -26,7 +26,20 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                      <strong>Neue Netwerkkarte wurde registriert!</strong>
+                      <strong>Neue Netwerkkarte wurde erfolgreich registriert!</strong>
+                    </div>
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if (isset($_GET['remove'])) { ?> 
+
+                    <?php if ($_GET['remove'] == 'success') { ?>   
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                      <strong>Die Netwerkkarte wurde erfolgreich gelöscht!</strong>
                     </div>
                     <?php } ?>
 
