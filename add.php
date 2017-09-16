@@ -38,13 +38,13 @@ include 'src/templates/header.php';
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="ipAdrr">IP-Adresse</label>
                             <div class="form-inline col-sm-9">
-                                <input type="number" class="form-control" name="ip_0" min="100" size="1" max="255">
-                                <span style="font-weight: bold;">.</span>
-                                <input type="number" class="form-control" name="ip_1" min="100" size="1" max="255">
-                                <span style="font-weight: bold;">.</span>
-                                <input type="number" class="form-control" name="ip_2" min="0" size="1" max="255">
-                                <span style="font-weight: bold;">.</span>
-                                <input type="number" class="form-control" placeholder="XXX" name="ip_3" min="10" size="1" max="254">
+                                <input type="number" class="form-control col-sm-2" onKeyPress="if(this.value.length === 3) return false;" name="ip_0" value="100" min="100" max="255">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">.</span>
+                                <input type="number" class="form-control col-sm-2" onKeyPress="if(this.value.length === 3) return false;" name="ip_1" value="100" min="100" max="255">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">.</span>
+                                <input type="number" class="form-control col-sm-2" onKeyPress="if(this.value.length === 3) return false;" name="ip_2" value="0" min="0" max="255">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">.</span>
+                                <input type="number" class="form-control col-sm-2" onKeyPress="if(this.value.length === 3) return false;" placeholder="XXX" name="ip_3" value="10" min="10" max="254">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,29 +56,29 @@ include 'src/templates/header.php';
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="mac">MAC-Adresse</label>
                             <div class="form-inline col-sm-9">
-                                <input class="form-control" type="text" name="mac_0" size="1" maxlength="2">
-                                <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_1" size="1" maxlength="2">
-                                <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_2" size="1" maxlength="2">
-                                <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_3" size="1" maxlength="2">
-                                <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_4" size="1" maxlength="2">
-                                <span style="font-weight: bold;">:</span>
-                                <input class="form-control" type="text" name="mac_5" size="1" maxlength="2">
+                                <input class="form-control" type="text" value="00" onKeyPress="if(this.value.length === 2) return false;" name="mac_0" size="2" minlength="2" maxlength="2">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">:</span>
+                                <input class="form-control" type="text" value="00" onKeyPress="if(this.value.length === 2) return false;" name="mac_1" size="2" minlength="2" maxlength="2">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">:</span>
+                                <input class="form-control" type="text" value="00" onKeyPress="if(this.value.length === 2) return false;" name="mac_2" size="2" minlength="2" maxlength="2">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">:</span>
+                                <input class="form-control" type="text" value="00" onKeyPress="if(this.value.length === 2) return false;" name="mac_3" size="2" minlength="2" maxlength="2">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">:</span>
+                                <input class="form-control" type="text" value="00" onKeyPress="if(this.value.length === 2) return false;" name="mac_4" size="2" minlength="2" maxlength="2">
+                                <span style="font-weight: bold; position: relative; margin: 0 2px">:</span>
+                                <input class="form-control" type="text" value="00" onKeyPress="if(this.value.length === 2) return false;" name="mac_5" size="2" minlength="2" maxlength="2">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-sm-3" for="subnet">Subnet Mask</label>
                             <div class="col-sm-9 form-inline">
-                                <input class="form-control" type="number" name="sub_0" min="100" size="1" max="255" >
-                                <span style="font-weight: bold;">.</span>
-                                <input class="form-control" type="number" name="sub_1" min="100" size="1" max="255" >
-                                <span style="font-weight: bold;">.</span>
-                                <input class="form-control" type="number" name="sub_2" min="100" size="1" max="255">
-                                <span style="font-weight: bold;">.</span>
-                                <input class="form-control" type="number" placeholder="XXX" name="sub_3" min="0" size="1" max="254">
+                                <input class="form-control col-sm-2" type="number" value="100" onKeyPress="if(this.value.length === 3) return false;" name="sub_0" min="100" max="255" >
+                                <span style="font-weight: bold;position: relative; margin: 0 2px">.</span>
+                                <input class="form-control col-sm-2" type="number" value="100" onKeyPress="if(this.value.length === 3) return false;" name="sub_1" min="100" max="255" >
+                                <span style="font-weight: bold;position: relative; margin: 0 2px">.</span>
+                                <input class="form-control col-sm-2" type="number" value="100" onKeyPress="if(this.value.length === 3) return false;" name="sub_2" min="100" max="255">
+                                <span style="font-weight: bold;position: relative; margin: 0 2px">.</span>
+                                <input class="form-control col-sm-2" type="number" value="0" onKeyPress="if(this.value.length === 3) return false;" name="sub_3" min="0" max="254">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -100,4 +100,3 @@ include 'src/templates/header.php';
 
     </div>
     <?php include_once "src/templates/footer.php"; ?>
-</div>

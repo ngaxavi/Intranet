@@ -18,20 +18,35 @@ if (isset($_GET['department'])) {
                           
                          
                           
-while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) { 
+  
+  // get mac company that create the network card
+  $base = strtoupper($row['mac_0']) . strtoupper($row['mac_1']) .strtoupper($row['mac_2']);
+  $statement = "SELECT company_name FROM drivers WHERE company_id_base = :base";
+
+  $query = $pdo->prepare($statement);
+  $query->execute(array(':base' => $base));
+
+  $company = $query->fetch(PDO::FETCH_ASSOC);
+
+  $company_name = $company ? $company['company_name'] : 'Unbekannt';
+  
+  
+  ?>
     <tr>
         <td class="text-center"><?php echo utf8_decode($row['department']); ?></td>
         <td class="text-center"><?php echo utf8_decode($row['manufacturer']); ?></td>
         <td class="text-center"><?php echo $row['ip_0'] . "." . $row['ip_1'] . "." . $row['ip_2'] . "." . $row['ip_3']; ?></td>
         <td class="text-center"><?php echo $row['mac_0'] . ":" . $row['mac_1'] . ":" . $row['mac_2'] . ":" . $row['mac_3'] . ":" . $row['mac_4'] . ":" . $row['mac_5']; ?></td>
         <td class="text-center"><?php echo $row['sub_0'] . "." . $row['sub_1'] . "." . $row['sub_2'] . "." . $row['sub_3']; ?></td>
+        <td class="text-center"><?php echo $company_name; ?></td>
         <td class="text-center"><?php echo $row['os']; ?></td>
         <?php
             if (isset($_SESSION['username']) && hasAdminOrSystemRole($_SESSION['user_role'])) { ?>
-                <td class="text-center">
-                    <a class="btn btn-sm btn-outline-warning" href="update.php?update=<?php echo $row['id'];?>">Bearbeiten</a> 
+                <td class="text-center" style='white-space: nowrap'>
+                    <a class="btn btn-sm btn-outline-warning" href="update.php?update=<?php echo $row['id'];?>" title="Bearbeiten"><i class="fa fa-pencil"></i></a> 
                     <?php if (hasSystemRole($_SESSION['user_role'])) { ?>
-                     | <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-id="<?php echo $row['id'];?>" data-target="#myModal_<?php echo $row['id'];?>">Löschen</button>
+                     | <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-id="<?php echo $row['id'];?>" data-target="#myModal_<?php echo $row['id'];?>" title="Löschen"><i class="fa fa-trash-o"></i></button>
                     <?php  } ?>
                     <div class="modal fade" id="myModal_<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

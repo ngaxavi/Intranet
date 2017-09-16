@@ -1,67 +1,68 @@
-<?php 
-include 'src/templates/header.php'; 
 
+<?php
+    include "src/templates/header.php";
+    include_once 'src/includes/utils.inc.php';
 ?>
 
 <div class="container tall">
     <div class="card my-card">
-        <div>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h1 class="text-center">Registrierung neuer Netwerkkarte</h1>
-                    <hr>
-                    <?php if (isset($_GET['add'])) { ?> 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-inline">
+                    <h1>Informationen über Netzwerkkarte</h1>
+                    <?php if(isset($_SESSION['username']) && hasAdminOrSystemRole($_SESSION['user_role'])) { ?>
+                    <a href="network-add.php" class="btn btn-sm btn-outline-success ml-auto">
+                        <span class="fa fa-plus"></span>
+                        <span>Netzwerkkarte hinzufügen</span>
+                    </a>
+                    <?php }  ?>
+                </div>
+                <hr>
 
-                    <?php if ($_GET['add'] == 'empty') { ?>   
-                    <div class="alert alert-danger">
-                      <strong>Alle Felder sind erforderlich!</strong>
-                    </div>
-                    <?php } ?>
+                <?php if (isset($_GET['add'])) { ?> 
 
-                    <?php if ($_GET['add'] == 'exists') { ?>   
-                    <div class="alert alert-warning">
-                      <strong>Es existiert bereits eine Netwerkkarte mit diesem Identifier!</strong>
+                    <?php if ($_GET['add'] == 'success') { ?>   
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                      <strong>Neue Netwerkkarte wurde erfolgreich registriert!</strong>
                     </div>
-                    <?php } ?>
-                    <?php if ($_GET['add'] == 'error') { ?>   
-                        <div class="alert alert-danger">
-                          <strong>Problem mit der Registrierung aufgetreten!</strong>
-                        </div>
                     <?php } ?>
 
                 <?php } ?>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form role="form" action="src/includes/network-add.inc.php" method="POST">
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-3" for="mac">Id</label>
-                            <div class="form-inline col-sm-9">
-                                <input class="form-control" type="text" name="id_0" size="5" maxlength="2">
-                                <span style="font-weight: bold; position: relative; margin: 0 10px">-</span>
-                                <input class="form-control" type="text" name="id_1" size="5" maxlength="2">
-                                <span style="font-weight: bold; position: relative; margin: 0 10px">-</span>
-                                <input class="form-control" type="text" name="id_2" size="5" maxlength="2">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-3" for="company">Hersteller</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" placeholder="Ex: Intel Corporation" name="company">
-                            </div>
-                        </div>
 
-                        <div class="float-right btn-space">
-                            <button type="submit" class="btn btn-outline-success" name="submit">Registrieren</button>
-                            <a href="javascript:history.back()" class="btn btn-outline-warning">Abbrechen</a>
-                        </div>
+                <?php if (isset($_GET['remove'])) { ?> 
 
-                    </form>
-                </div>
+                    <?php if ($_GET['remove'] == 'success') { ?>   
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                      <strong>Die Netwerkkarte wurde erfolgreich gelöscht!</strong>
+                    </div>
+                    <?php } ?>
+
+                <?php } ?>
             </div>
+                
+                <table id="mydrivers" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead class="thead-default" id="<?php echo isset($_SESSION['username']) && hasSystemRole($_SESSION['user_role']) ? 'hasRole': 'hasNoRole' ?>">
+                        <tr>
+                            <th class="text-center">Netzwerkkarte Id (Hex)</th>
+                            <th class="text-center">Netzwerkkarte Id (Base 16)</th>
+                            <th class="text-center">Hersteller</th>
+                            <?php if (isset($_SESSION['username']) && hasSystemRole($_SESSION['user_role'])) { ?>  
+                            <th class="text-center">Aktion</th>
+                            <?php } ?>
+                        </tr>
+                    </thead>
+            </table>
+            
         </div>
+       
 
-    </div>
-    <?php include_once "src/templates/footer.php"; ?>
-</div>
+        </div>
+<?php
+    include_once "src/templates/footer.php";
+?>

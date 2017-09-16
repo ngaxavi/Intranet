@@ -105,6 +105,7 @@
                     <th class="text-center">IP-Adresse</th>
                     <th class="text-center">MAC-Adresse</th>
                     <th class="text-center">Subnet-Adresse</th>
+                    <th class="text-center">MAC Hersteller</th>
                     <th class="text-center">Betriebssystem</th>
                     <?php
                       if(isset($_SESSION['user_role']) && hasAdminOrSystemRole($_SESSION['user_role'])) { ?>
@@ -127,6 +128,4 @@
 <?php
     include_once "src/templates/footer.php";
 ?>
-
-</div> <!-- /container -->
 

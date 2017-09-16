@@ -6,19 +6,47 @@
     <div class="card my-card">
     <div class="row">
             <div class="col-lg-12">
-                <h2 class="my-4 text-center">Verwaltung von Rechten der Benutzern </h2>
+                <h2 class="my-4 text-center">Verwaltung von Benutzern </h2>
                 <hr>
                 <?php if (isset($_GET['update_rechte'])) { ?> 
 
                     <?php if ($_GET['update_rechte'] == 'error') { ?>   
                     <div class="alert alert-danger">
-                      <strong>Es besteht ein Problem mit dem Update von User Rechte!</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Es besteht ein Problem mit dem Update von User Rechte!</strong>
                     </div>
                     <?php } ?>
 
                     <?php if ($_GET['update_rechte'] == 'success') { ?>   
                     <div class="alert alert-success">
-                      <strong>Die Rechte wurden updatet!</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Die Rechte wurden updatet!</strong>
+                    </div>
+                    <?php } ?>
+
+                <?php } ?>
+
+                <?php if (isset($_GET['remove'])) { ?> 
+
+                    <?php if ($_GET['remove'] == 'error') { ?>   
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Es gibt kein Benutzer mit diesem Identifier! Bitte überprüfen Sie Ihre Datenbank</strong>
+                    </div>
+                    <?php } ?>
+
+                    <?php if ($_GET['remove'] == 'success') { ?>   
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Der Benutzer wurde erfolgreich gelöscht!</strong>
                     </div>
                     <?php } ?>
 
@@ -33,6 +61,7 @@
                         <th class="text-center">Nachname</th>
                         <th class="text-center">Email</th>
                         <th class="text-center">Rechte</th>
+                        <th class="text-center">Aktion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,8 +84,8 @@
                             <td class="text-center"><?php echo $row['first_name']; ?></td>
                             <td class="text-center"><?php echo $row['last_name']; ?></td>
                             <td class="text-center"><?php echo $row['email']; ?></td>
-                            <td class="text-center">
-                            <form action="src/includes/users.inc.php" method="POST">
+                            <td class="text-center" style='white-space: nowrap'>
+                            <form action="src/includes/users-role-update.inc.php" method="POST">
                             <input type="hidden" value="<?php echo $row['id']; ?>" name="user_id">
                             <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="role">
                                 <option value="ADMIN" <?php echo ($row['role_name'] === 'ADMIN') ? 'selected' : ''; ?>>ADMIN</option>
@@ -64,6 +93,9 @@
                             </select>
                             | <button class="btn btn-sm btn-outline-info" name='update' type="submit">Update Rechte</button>
                             </form>
+                            </td>
+                            <td class="text-center">
+                                <a class="btn btn-sm btn-outline-danger" title="Benutzer löschen" href="src/includes/users-remove.inc.php?user_id=<?php echo $row['id']; ?>"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                         
@@ -79,6 +111,3 @@
 <?php
     include_once "src/templates/footer.php";
 ?>
-
-</div>
-</div>

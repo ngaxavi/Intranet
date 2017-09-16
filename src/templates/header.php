@@ -51,8 +51,8 @@
           </div>
         </li>
         <?php } ?>
-        <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/infos.php" ? "active" : "");?>">
-          <a class="nav-link" href="../../infos.php">Netwerkkarte</a>
+        <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/network.php" ? "active" : "");?>">
+          <a class="nav-link" href="../../network.php">Netzwerkkarte</a>
         </li>
         <?php if(isset($_SESSION['user_role']) && hasSystemRole($_SESSION['user_role'])) { ?>
         <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/users.php" ? "active" : "");?>">

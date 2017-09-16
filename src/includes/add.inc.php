@@ -3,6 +3,8 @@
 if (isset($_POST['submit'])) {
     include_once 'dbh.inc.php';
 
+    
+
     $department = $_POST['department'];
     $ip_0 = $_POST['ip_0'];
     $ip_1 = $_POST['ip_1'];
@@ -21,12 +23,10 @@ if (isset($_POST['submit'])) {
     $sub_3 = $_POST['sub_3'];
     $os = $_POST['os'];
 
-    // check if no empty
-    foreach($_POST as $key => $value) { 
-        if (empty($value)) { 
-            header("Location: ../../add.php?status=empty");
-            exit();
-        }
+     // check if no empty
+    if(empty($department) || empty($manufacturer) || empty($os)) {
+        header("Location: ../../add.php?status=empty");
+        exit();
     }
 
 
