@@ -7,8 +7,8 @@
   <div class="container">
     <h1 class="display-3"> Praxis Biso Na Biso</h1>
     <p>
-      Das ist das Intranet der Praxis Biso Na Biso. Alle Geräte, die sich in verschiedenen Abteilungen befinden,
-      werden hier registriert und aufgelistet.
+      Willkommen in das Intranet der Praxis Biso Na Biso. Alle Geräte, die sich in verschiedenen Abteilungen befinden,
+      werden hier registriert und verwaltet.
     </p>
     <p>
       <a class="btn btn-primary btn-lg" href="infos.php" role="button">Mehr Informationen über die Netzwerkkarten &raquo;</a>

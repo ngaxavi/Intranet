@@ -61,10 +61,16 @@
         <?php } ?>
         </ul>
         <?php if (!isset($_SESSION['username'])) { ?>
-        <ul class="navbar-nav ml-auto btn-space">
-            <a href="login.php" class="btn btn-sm btn-outline-primary">Anmelden</a>
+        <ul class="navbar-nav ml-auto">
+            <a href="login.php" class="btn-space btn btn-sm btn-outline-primary">
+              <span class="fa fa-sign-in"></span>
+              <span>Anmelden</span>
+            </a>
 
-            <a href="register.php" class="btn btn-sm btn-outline-success">Registrieren</a>
+            <a href="register.php" class="btn-space btn btn-sm btn-outline-success">
+              <span class="fa fa-user-plus"></span>
+              <span>Registrieren</span>
+            </a>
         </ul>
         <?php } else { ?>
           <ul class="navbar-nav ml-auto">
@@ -97,7 +103,10 @@
                           <div class="row">
                               <div class="col-lg-12">
                                   <form action="src/includes/logout.inc.php" method="POST"> 
-                                      <button type="submit" class="btn btn-outline-danger btn-block" name="logout">Abmelden</button>
+                                      <button type="submit" class="btn btn-outline-danger btn-block" name="logout">
+                                        <span class="fa fa-sign-out"></span>
+                                        <span>Abmelden</span>
+                                      </button>
                                  </form>
                               </div>
                           </div>
