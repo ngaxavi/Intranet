@@ -11,7 +11,7 @@
       werden hier registriert und verwaltet.
     </p>
     <p>
-      <a class="btn btn-primary btn-lg" href="network-add.php" role="button">Mehr Informationen über die Netzwerkkarten &raquo;</a>
+      <a class="btn btn-primary btn-lg" href="network.php" role="button">Mehr Informationen über die Netzwerkkarten &raquo;</a>
     </p>
   </div>
 </div>
