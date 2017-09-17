@@ -27,4 +27,4 @@ CREATE TABLE users (
 
 
 INSERT INTO users (username, first_name, last_name, email, password) VALUES
-('bisonabiso', 'BisoNaBiso', 'Verwaltung', 'verwaltung@bisonabiso.de', '$2y$10$VsUSSCEhME3zYXdCQ5WM1OEuOfS4m07gD7pPry85XQKf92MxF7Fsi');
+('bissonabisso', 'BissoNaBisso', 'Verwaltung', 'verwaltung@bissonabisso.de', '$2y$10$p3nsS1U6ilfb/smMNxnx4ucGa2ZoMMuyovtIKPaEJ7k0p0aQeQEJi');
