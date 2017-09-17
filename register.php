@@ -54,7 +54,7 @@
             <div class="col-md-8">
                 <form role="form" action="src/includes/register.inc.php" method="POST">
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="username">Benutzername</label>
+                        <label class="col-form-label col-sm-3" for="username">Benutzername<span style="color:red;">*</span></label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="username" name="username" 
                             value="<?php if (isset($_POST['username'])) {
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="firstName">Vorname</label>
+                        <label class="col-form-label col-sm-3" for="firstName">Vorname<span style="color:red;">*</span></label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="firstName" name="firstName" 
                             value="<?php if (isset($_POST['firstName'])) {
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="lastName">Nachname</label>
+                        <label class="col-form-label col-sm-3" for="lastName">Nachname<span style="color:red;">*</span></label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="lastName" 
                             value="<?php if (isset($_POST['lastName'])) {
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="email">Email</label>
+                        <label class="col-form-label col-sm-3" for="email">Email<span style="color:red;">*</span></label>
                         <div class="col-sm-9">
                             <input type="email" class="form-control" id="email" name="email" 
                             value="<?php if (isset($_POST['email'])) {
@@ -90,13 +90,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="password">Passwort</label>
+                        <label class="col-form-label col-sm-3" for="password">Passwort<span style="color:red;">*</span></label>
                         <div class="col-sm-9">
                             <input type="password" class="form-control" id="password" name="password" placeholder="Passwort">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="confirmPassword">Passwort Bestätigung</label>
+                        <label class="col-form-label col-sm-3" for="confirmPassword">Passwort Bestätigung<span style="color:red;">*</span></label>
                         <div class="col-sm-9">
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Passwort bestätigen">
                         </div>

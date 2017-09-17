@@ -56,7 +56,7 @@
         </li>
         <?php if(isset($_SESSION['user_role']) && hasSystemRole($_SESSION['user_role'])) { ?>
         <li class="nav-item <?php echo ($_SERVER['PHP_SELF'] == "/users.php" ? "active" : "");?>">
-          <a class="nav-link" href="../../users.php">Benutzerrechte</a>
+          <a class="nav-link" href="../../users.php">Benutzerverwaltung</a>
         </li>
         <?php } ?>
         </ul>
