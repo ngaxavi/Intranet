@@ -40,7 +40,7 @@ if(isset($_POST['submit'])) {
     $insert = $pdo->prepare($statement);
     $insert->execute([':hex' => $hex, ':base' => $base, ':company' => $company]);
 
-    header("Location: ../../infos.php?add=success");
+    header("Location: ../../network.php?add=success");
     exit();
 
 

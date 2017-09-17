@@ -14,5 +14,5 @@ $delete = $pdo->prepare($statement);
 $delete->execute(array(':id' => $networkId));
 
 
-header("Location: ../../infos.php?remove=success");
+header("Location: ../../network.php?remove=success");
 exit();
