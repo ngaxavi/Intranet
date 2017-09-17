@@ -5,9 +5,9 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-3"> Praxis Biso Na Biso</h1>
+    <h1 class="display-3"> Praxis Bisso Na Bisso</h1>
     <p>
-      Willkommen in das Intranet der Praxis Biso Na Biso. Alle Geräte, die sich in verschiedenen Abteilungen befinden,
+      Willkommen in das Intranet der Praxis Bisso Na Bisso. Alle Geräte, die sich in verschiedenen Abteilungen befinden,
       werden hier registriert und verwaltet.
     </p>
     <p>
